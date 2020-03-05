@@ -1,2 +1,36 @@
-node_modules/
+# OS
+#
+# Ref: https://github.com/github/gitignore/blob/master/Global/macOS.gitignore
+# Ref: https://github.com/github/gitignore/blob/master/Global/Windows.gitignore
+# Ref: https://github.com/github/gitignore/blob/master/Global/Linux.gitignore
+.DS_STORE
+Thumbs.db
+
+# Editors
+#
+# Ref: https://github.com/github/gitignore/blob/master/Global
+# Ref: https://github.com/github/gitignore/blob/master/Global/JetBrains.gitignore
+# Ref: https://github.com/github/gitignore/blob/master/Global/VisualStudioCode.gitignore
+.idea
+.chrome
+.vs
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+
+# Dependencies
+node_modules
 package-lock.json
+
+# Copied files
+/fonts
+
+# Compiled files
+/scripts
+/src/environment.js
+/src/environment.ts
+/dist
+/test/coverage-jest
+/test/coverage-karma
