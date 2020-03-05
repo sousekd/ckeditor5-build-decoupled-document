@@ -23,6 +23,11 @@ import PasteFromOffice from '@ckeditor/ckeditor5-paste-from-office/src/pastefrom
 import Table from '@ckeditor/ckeditor5-table/src/table';
 import TableToolbar from '@ckeditor/ckeditor5-table/src/tabletoolbar';
 
+import PendingActions from '@ckeditor/ckeditor5-core/src/pendingactions';
+import Autosave from '@ckeditor/ckeditor5-autosave/src/autosave';
+import Comments from '@ckeditor/ckeditor5-comments/src/comments';
+import TrackChanges from '@ckeditor/ckeditor5-track-changes/src/trackchanges';
+
 export default class DecoupledEditor extends DecoupledEditorBase {}
 
 // Plugins to include in the build.
@@ -42,7 +47,11 @@ DecoupledEditor.builtinPlugins = [
 	Paragraph,
 	PasteFromOffice,
 	Table,
-	TableToolbar
+	TableToolbar,
+	PendingActions,
+	Autosave,
+	Comments,
+	TrackChanges
 ];
 
 // Editor configuration.
