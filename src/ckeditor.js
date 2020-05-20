@@ -4,6 +4,7 @@
  */
 
 // The editor creator to use.
+import ContextBase from '@ckeditor/ckeditor5-core/src/context';
 import DecoupledEditorBase from '@ckeditor/ckeditor5-editor-decoupled/src/decouplededitor';
 
 import Essentials from '@ckeditor/ckeditor5-essentials/src/essentials';
@@ -23,64 +24,76 @@ import PasteFromOffice from '@ckeditor/ckeditor5-paste-from-office/src/pastefrom
 import Table from '@ckeditor/ckeditor5-table/src/table';
 import TableToolbar from '@ckeditor/ckeditor5-table/src/tabletoolbar';
 
+import CommentsRepository from '@ckeditor/ckeditor5-comments/src/comments/commentsrepository';
+import NarrowSidebar from '@ckeditor/ckeditor5-comments/src/annotations/narrowsidebar';
+import WideSidebar from '@ckeditor/ckeditor5-comments/src/annotations/widesidebar';
+
 import PendingActions from '@ckeditor/ckeditor5-core/src/pendingactions';
 import Autosave from '@ckeditor/ckeditor5-autosave/src/autosave';
 import Comments from '@ckeditor/ckeditor5-comments/src/comments';
 import TrackChanges from '@ckeditor/ckeditor5-track-changes/src/trackchanges';
 
-export default class DecoupledEditor extends DecoupledEditorBase {}
+class Context extends ContextBase { }
+class DecoupledEditor extends DecoupledEditorBase { }
+export default { Context, DecoupledEditor };
 
-// Plugins to include in the build.
-DecoupledEditor.builtinPlugins = [
-	Essentials,
-	Autoformat,
-	Bold,
-	Italic,
-	Strikethrough,
-	Underline,
-	BlockQuote,
-	Heading,
-	Indent,
-	IndentBlock,
-	Link,
-	List,
-	Paragraph,
-	PasteFromOffice,
-	Table,
-	TableToolbar,
-	PendingActions,
-	Autosave,
-	Comments,
-	TrackChanges
+// Plugins to include in the context
+Context.builtinPlugins = [
+  CommentsRepository,
+  NarrowSidebar,
+  WideSidebar
 ];
 
-// Editor configuration.
+// Plugins to include in the editor
+DecoupledEditor.builtinPlugins = [
+  Essentials,
+  Autoformat,
+  Bold,
+  Italic,
+  Strikethrough,
+  Underline,
+  BlockQuote,
+  Heading,
+  Indent,
+  IndentBlock,
+  Link,
+  List,
+  Paragraph,
+  PasteFromOffice,
+  Table,
+  TableToolbar,
+  PendingActions,
+  Autosave,
+  Comments,
+  TrackChanges
+];
+
+// Editor configuration
 DecoupledEditor.defaultConfig = {
-	toolbar: {
-		items: [
-			'heading',
-			'|',
-			'bold',
-			'italic',
-			'underline',
-			'link',
-			'|',
-			'numberedList',
-			'bulletedList',
-			'blockQuote',
-			'insertTable',
-			'|',
-			'undo',
-			'redo'
-		]
-	},
-	table: {
-		contentToolbar: [
-			'tableColumn',
-			'tableRow',
-			'mergeTableCells'
-		]
-	},
-	// This value must be kept in sync with the language defined in webpack.config.js.
-	language: 'en'
+  toolbar: {
+    items: [
+      'heading',
+      '|',
+      'bold',
+      'italic',
+      'underline',
+      'link',
+      '|',
+      'numberedList',
+      'bulletedList',
+      'blockQuote',
+      'insertTable',
+      '|',
+      'undo',
+      'redo'
+    ]
+  },
+  table: {
+    contentToolbar: [
+      'tableColumn',
+      'tableRow',
+      'mergeTableCells'
+    ]
+  },
+  language: 'en'
 };

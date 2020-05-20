@@ -1,24 +1,13 @@
 {
   "name": "intelogy-ckeditor5-decoupled-document-collaboration",
-  "version": "17.0.0-build1",
+  "version": "17.0.0-build2",
   "description": "The document editor build of CKEditor 5 with collaboration features.",
   "keywords": [
-    "ckeditor5-build",
     "ckeditor",
-    "ckeditor5",
-    "ckeditor 5",
-    "wysiwyg",
     "rich text",
     "editor",
-    "html",
-    "contentEditable",
-    "editing",
-    "operational transformation",
-    "ot",
     "collaboration",
-    "collaborative",
-    "real-time",
-    "framework"
+    "collaborative"
   ],
   "main": "./build/ckeditor.js",
   "files": [
