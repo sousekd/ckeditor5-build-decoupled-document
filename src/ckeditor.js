@@ -24,9 +24,11 @@ import PasteFromOffice from '@ckeditor/ckeditor5-paste-from-office/src/pastefrom
 import Table from '@ckeditor/ckeditor5-table/src/table';
 import TableToolbar from '@ckeditor/ckeditor5-table/src/tabletoolbar';
 
-import CommentsRepository from '@ckeditor/ckeditor5-comments/src/comments/commentsrepository';
-import NarrowSidebar from '@ckeditor/ckeditor5-comments/src/annotations/narrowsidebar';
+import Users from '@ckeditor/ckeditor5-collaboration-core/src/users';
+import Annotations from '@ckeditor/ckeditor5-comments/src/annotations/annotations';
 import WideSidebar from '@ckeditor/ckeditor5-comments/src/annotations/widesidebar';
+import NarrowSidebar from '@ckeditor/ckeditor5-comments/src/annotations/narrowsidebar';
+import CommentsRepository from '@ckeditor/ckeditor5-comments/src/comments/commentsrepository';
 
 import PendingActions from '@ckeditor/ckeditor5-core/src/pendingactions';
 import Autosave from '@ckeditor/ckeditor5-autosave/src/autosave';
@@ -35,13 +37,15 @@ import TrackChanges from '@ckeditor/ckeditor5-track-changes/src/trackchanges';
 
 class Context extends ContextBase { }
 class DecoupledEditor extends DecoupledEditorBase { }
-export default { Context, DecoupledEditor };
+export default { Context, DecoupledEditor, Users, CommentsRepository, TrackChanges };
 
 // Plugins to include in the context
 Context.builtinPlugins = [
-  CommentsRepository,
+  Users,
+  Annotations,
+  WideSidebar,
   NarrowSidebar,
-  WideSidebar
+  CommentsRepository
 ];
 
 // Plugins to include in the editor
