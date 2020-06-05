@@ -8,6 +8,7 @@ import ContextBase from '@ckeditor/ckeditor5-core/src/context';
 import DecoupledEditorBase from '@ckeditor/ckeditor5-editor-decoupled/src/decouplededitor';
 
 import Essentials from '@ckeditor/ckeditor5-essentials/src/essentials';
+import Alignment from '@ckeditor/ckeditor5-alignment/src/alignment.js';
 import Autoformat from '@ckeditor/ckeditor5-autoformat/src/autoformat';
 import Bold from '@ckeditor/ckeditor5-basic-styles/src/bold';
 import Italic from '@ckeditor/ckeditor5-basic-styles/src/italic';
@@ -15,6 +16,7 @@ import Strikethrough from '@ckeditor/ckeditor5-basic-styles/src/strikethrough';
 import Underline from '@ckeditor/ckeditor5-basic-styles/src/underline';
 import BlockQuote from '@ckeditor/ckeditor5-block-quote/src/blockquote';
 import Heading from '@ckeditor/ckeditor5-heading/src/heading';
+import Highlight from '@ckeditor/ckeditor5-highlight/src/highlight.js';
 import Indent from '@ckeditor/ckeditor5-indent/src/indent';
 import IndentBlock from '@ckeditor/ckeditor5-indent/src/indentblock';
 import Link from '@ckeditor/ckeditor5-link/src/link';
@@ -51,6 +53,7 @@ Context.builtinPlugins = [
 // Plugins to include in the editor
 DecoupledEditor.builtinPlugins = [
   Essentials,
+  Alignment,
   Autoformat,
   Bold,
   Italic,
@@ -58,6 +61,7 @@ DecoupledEditor.builtinPlugins = [
   Underline,
   BlockQuote,
   Heading,
+  Highlight,
   Indent,
   IndentBlock,
   Link,
@@ -81,10 +85,17 @@ DecoupledEditor.defaultConfig = {
       'bold',
       'italic',
       'underline',
-      'link',
+      'highlight',
+      '|',
+      'alignment',
       '|',
       'numberedList',
       'bulletedList',
+      '|',
+      'indent',
+      'outdent',
+      '|',
+      'link',
       'blockQuote',
       'insertTable',
       '|',
